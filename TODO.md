@@ -6,6 +6,8 @@
 - [x] Add documentation
 - [x] README
 
+---
+
 - [x] Sip some coffee ☕
 
 ![Coffee](/assets/coffee.jpeg)
