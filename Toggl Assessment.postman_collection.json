@@ -1,0 +1,193 @@
+{
+	"info": {
+		"_postman_id": "526fda1a-8572-4d45-b236-7601e1c67a2a",
+		"name": "Toggl Assessment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13958327"
+	},
+	"item": [
+		{
+			"name": "Create Deck",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/deck",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"deck"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Deck With Specified Cards",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/deck?cards=AS,KD,AC,2C,KH,KS",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deck"
+							],
+							"query": [
+								{
+									"key": "cards",
+									"value": "AS,KD,AC,2C,KH,KS"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Create Complete Deck",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/deck",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deck"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Fetch Deck",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/deck/{{deckId}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"deck",
+						"{{deckId}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Fetch Unshuffled Deck",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/deck/315e0d8d-8e86-4427-858d-febf92764f32?shuffle=false",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deck",
+								"315e0d8d-8e86-4427-858d-febf92764f32"
+							],
+							"query": [
+								{
+									"key": "shuffle",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Fetch Shuffled Deck",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/deck/{{deckId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"deck",
+								"{{deckId}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Draw Card",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/deck/{{deckId}}/draw/{{count}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"deck",
+						"{{deckId}}",
+						"draw",
+						"{{count}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Draw Two Cards",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/deck/315e0d8d-8e86-4427-858d-febf92764f32/draw/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deck",
+								"315e0d8d-8e86-4427-858d-febf92764f32",
+								"draw",
+								"2"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}
