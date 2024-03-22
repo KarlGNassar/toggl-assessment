@@ -4,18 +4,33 @@
 
 REST API written in Go to handle deck and cards manipulation for any game like Poker or Blackjack
 
+Features:
+
+- REST API w/ Custom Response
+- Dependency Injection
+- Error Handling & Custom Error responses
+- Middleware Authentication (using x-api-key in header)
+
+Tech Stack: Golang (w/ chi router), MongoDb
+
 ### Installation
 
 Manually Install Packages: `go mod download`
+
+> Note: Connection strings, api keys and other config variables are purposely not hidden and not ignored (in .gitignore) for the program to run out of the box
 
 ### Development
 
 `go run cmd/server/main.go`
 
+> Important: If you're having issues running the `main.go` because of the `.env` or log files, try changing the path to absolute paths in the `main.go` i.e. `.env` to `../../.env` and `logs/deck-api.log` to `../../logs/deck-api.log`
+
 ### Production
 
-- Build
-- Run
+- Build: `go build cmd/server/main.go`
+- Run:
+  - Windows: `.\main.exe`
+  - Linux: `./main`
 
 ### Testing
 
@@ -51,3 +66,4 @@ Postman collection available: [Postman Collection](Toggl%20Assessment.postman_co
         sharedscripts
     }
     ```
+- Optional: Add load balancers + auto scaling groups

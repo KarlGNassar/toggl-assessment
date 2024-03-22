@@ -7,8 +7,9 @@ import (
 )
 
 const (
-	ErrorCodeNotFound = "NOT_FOUND"
-	ErrorInternal     = "INTERNAL"
+	ErrorCodeNotFound  = "NOT_FOUND"
+	ErrorInternal      = "INTERNAL"
+	ErrorInvalidApiKey = "INVALID_API_KEY"
 )
 
 func writeJson(w http.ResponseWriter, statusCode int, v any) {
@@ -34,6 +35,13 @@ func NoContent(w http.ResponseWriter) {
 
 func Forbidden(w http.ResponseWriter, code string, err error) {
 	writeJson(w, http.StatusForbidden, ErrorResponse{
+		ErrorCode:    code,
+		ErrorMessage: err.Error(),
+	})
+}
+
+func Unauthorized(w http.ResponseWriter, code string, err error) {
+	writeJson(w, http.StatusUnauthorized, ErrorResponse{
 		ErrorCode:    code,
 		ErrorMessage: err.Error(),
 	})
