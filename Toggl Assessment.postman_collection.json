@@ -26,7 +26,13 @@
 					"name": "Create Deck With Specified Cards",
 					"originalRequest": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "123erxn87",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://localhost:8080/deck?cards=AS,KD,AC,2C,KH,KS",
 							"protocol": "http",
@@ -45,16 +51,30 @@
 							]
 						}
 					},
-					"_postman_previewlanguage": null,
-					"header": null,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
 					"cookie": [],
-					"body": null
+					"body": "{\r\n    \"deck_id\": {{deckId}},\r\n    \"shuffled\": false,\r\n    \"remaining\": 6\r\n}"
 				},
 				{
 					"name": "Create Complete Deck",
 					"originalRequest": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "123erxn87",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://localhost:8080/deck",
 							"protocol": "http",
@@ -67,15 +87,23 @@
 							]
 						}
 					},
-					"_postman_previewlanguage": null,
-					"header": null,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
 					"cookie": [],
-					"body": null
+					"body": "{\r\n    \"deck_id\": {{deckId}},\r\n    \"shuffled\": false,\r\n    \"remaining\": 52\r\n}"
 				}
 			]
 		},
 		{
-			"name": "Fetch Deck",
+			"name": "Open Deck",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -95,9 +123,15 @@
 					"name": "Fetch Unshuffled Deck",
 					"originalRequest": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "123erxn87",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "http://localhost:8080/deck/315e0d8d-8e86-4427-858d-febf92764f32?shuffle=false",
+							"raw": "http://localhost:8080/deck/c124ed5f-0d46-4c39-a6b1-d32d674517d2?shuffle=false",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -105,7 +139,7 @@
 							"port": "8080",
 							"path": [
 								"deck",
-								"315e0d8d-8e86-4427-858d-febf92764f32"
+								"c124ed5f-0d46-4c39-a6b1-d32d674517d2"
 							],
 							"query": [
 								{
@@ -115,31 +149,61 @@
 							]
 						}
 					},
-					"_postman_previewlanguage": null,
-					"header": null,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
 					"cookie": [],
-					"body": null
+					"body": "{\n    \"deck_id\": {{deckId}},\n    \"shuffled\": false,\n    \"remaining\": {{remaining}},\n    \"cards\": [\n        {\n            \"value\": \"ACE\",\n            \"suit\": \"SPADES\",\n            \"code\": \"AS\"\n        }\n    ]\n}"
 				},
 				{
 					"name": "Fetch Shuffled Deck",
 					"originalRequest": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "123erxn87",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "{{baseUrl}}/deck/{{deckId}}",
+							"raw": "http://localhost:8080/deck/c124ed5f-0d46-4c39-a6b1-d32d674517d2?shuffle=true",
+							"protocol": "http",
 							"host": [
-								"{{baseUrl}}"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"deck",
-								"{{deckId}}"
+								"c124ed5f-0d46-4c39-a6b1-d32d674517d2"
+							],
+							"query": [
+								{
+									"key": "shuffle",
+									"value": "true"
+								}
 							]
 						}
 					},
-					"_postman_previewlanguage": null,
-					"header": null,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
 					"cookie": [],
-					"body": null
+					"body": "{\n    \"deck_id\": {{deckId}},\n    \"shuffled\": true,\n    \"remaining\": {{remaining}},\n    \"cards\": {{cards}}\n}"
 				}
 			]
 		},
@@ -166,9 +230,15 @@
 					"name": "Draw Two Cards",
 					"originalRequest": {
 						"method": "PUT",
-						"header": [],
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "123erxn87",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "http://localhost:8080/deck/315e0d8d-8e86-4427-858d-febf92764f32/draw/2",
+							"raw": "http://localhost:8080/deck/c124ed5f-0d46-4c39-a6b1-d32d674517d2/draw/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -176,16 +246,63 @@
 							"port": "8080",
 							"path": [
 								"deck",
-								"315e0d8d-8e86-4427-858d-febf92764f32",
+								"c124ed5f-0d46-4c39-a6b1-d32d674517d2",
 								"draw",
 								"2"
 							]
 						}
 					},
-					"_postman_previewlanguage": null,
-					"header": null,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
 					"cookie": [],
-					"body": null
+					"body": "{\r\n    \"cards\": [\r\n        {\r\n            \"value\": \"QUEEN\",\r\n            \"suit\": \"HEARTS\",\r\n            \"code\": \"QH\"\r\n        }\r\n    ]\r\n}"
+				},
+				{
+					"name": "Draw Unavailable Cards",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "123erxn87",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/deck/c124ed5f-0d46-4c39-a6b1-d32d674517d2/draw/100",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deck",
+								"c124ed5f-0d46-4c39-a6b1-d32d674517d2",
+								"draw",
+								"100"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error_code\": \"INSUFFICIENT_CARDS\",\n    \"error_message\": \"not enough cards in the deck: requested {{count}}, available {{remaining}}\"\n}"
 				}
 			]
 		}

@@ -1,7 +1,5 @@
 # Toggl Unattended Programming Test
 
----
-
 REST API written in Go to handle deck and cards manipulation for any game like Poker or Blackjack
 
 Features:
@@ -39,6 +37,8 @@ Run all tests in verbose mode: `go test ./... -v`
 ### Postman
 
 Postman collection available: [Postman Collection](Toggl%20Assessment.postman_collection.json)
+
+> Examples included which you can run as is
 
 ---
 

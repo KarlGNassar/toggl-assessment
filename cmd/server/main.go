@@ -39,7 +39,7 @@ func main() {
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
 
-	client, err := mongo.Connect(ctx, options.Client().ApplyURI("mongodb+srv://karlnassar01:1OzfwiLlYzTDu4cZ@cluster0.u0ods0b.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"))
+	client, err := mongo.Connect(ctx, options.Client().ApplyURI(os.Getenv("MONGO_URL")))
 	if err != nil {
 		log.Fatalf("Failed to create MongoDb client: %v", err)
 	}
