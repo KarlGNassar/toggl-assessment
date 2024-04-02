@@ -11,10 +11,10 @@ import (
 )
 
 type DeckService struct {
-	store *store.MongoDeckStore
+	store store.DeckStore
 }
 
-func NewDeckService(store *store.MongoDeckStore) *DeckService {
+func NewDeckService(store store.DeckStore) *DeckService {
 	return &DeckService{store: store}
 }
 

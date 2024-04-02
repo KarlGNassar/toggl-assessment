@@ -9,6 +9,12 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
+type DeckStore interface {
+	CreateDeck(ctx context.Context, deck model.Deck) error
+	GetDeck(ctx context.Context, id uuid.UUID) (model.Deck, error)
+	UpdateDeck(ctx context.Context, id uuid.UUID, deck model.Deck) error
+}
+
 type MongoDeckStore struct {
 	db *mongo.Collection
 }
