@@ -1,3 +1,9 @@
+## SETUP FOR DOCKER
+
+run (in the root directory /): `docker-compose up -d --build`
+
+> Note: for testing, add `x-api-key` with value of `123erxn87` in the headers
+
 # Toggl Unattended Programming Test
 
 REST API written in Go to handle deck and cards manipulation for any game like Poker or Blackjack
